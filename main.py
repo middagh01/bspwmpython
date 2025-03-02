@@ -49,7 +49,7 @@ def req():
     print("[+] Instalando requerimientos...\n")
     os.system("sudo pacman  -S --noconfirm sudo pacman -S libconfig-devel dbus-devel libev-devel libepoxy-devel pcre2-devel pixman-devel xorgproto libx11-devel libxcb-devel libxcb-composite-devel libxcb-damage-devel libxcb-glx-devel libxcb-image-devel libxcb-present-devel libxcb-randr-devel libxcb-render-devel libxcb-render-util-devel libxcb-shape-devel libxcb-xfixes-devel xcb-util-devel mesa-devel meson ninja uthash")
     os.system("sudo pacman  -S --noconfirm base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm libxcb xorg-xrandr alsa-lib libxinerama")
-    os.system("sudo pacman -S --noconfirm bspwm kitty polybar rofi")
+    os.system("sudo pacman -S --noconfirm bspwm kitty polybar rofi meson cmake libev uthash libepoxy" )
     time.sleep(2)
     print("[+] Requetimientos instalados correctamente")
 
