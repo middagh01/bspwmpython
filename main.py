@@ -37,6 +37,7 @@ def menu():
         bspwm()
     if option == "3":
         conf()
+        polybar()
     if option == "4":
         #req()
         #bspwm()
@@ -49,7 +50,8 @@ def req():
     print("[+] Instalando requerimientos...\n")
     os.system("sudo pacman  -S --noconfirm sudo pacman -S libconfig-devel dbus-devel libev-devel libepoxy-devel pcre2-devel pixman-devel xorgproto libx11-devel libxcb-devel libxcb-composite-devel libxcb-damage-devel libxcb-glx-devel libxcb-image-devel libxcb-present-devel libxcb-randr-devel libxcb-render-devel libxcb-render-util-devel libxcb-shape-devel libxcb-xfixes-devel xcb-util-devel mesa-devel meson ninja uthash")
     os.system("sudo pacman  -S --noconfirm base-devel git vim xcb-util xcb-util-wm xcb-util-keysyms xcb-util-xrm libxcb xorg-xrandr alsa-lib libxinerama")
-    os.system("sudo pacman -S --noconfirm bspwm kitty polybar rofi meson cmake libev uthash libepoxy" )
+    os.system("sudo pacman -S --noconfirm bspwm kitty polybar rofi meson cmake libev uthash libepoxy pkgconf xorg-server xorg-xinit glfw-x11" )
+    os.system("sudo pacman -S --noconfirm 7zip")
     time.sleep(2)
     print("[+] Requetimientos instalados correctamente")
 
@@ -67,6 +69,11 @@ def conf():
     os.system("mkdir -p ~/.config/bspwm/scripts && mkdir ~/.config/sxhkd")
     shutil.copy(os.path.join(os.getcwd(),"sxhkdrc"), os.path.expanduser("~/.config/sxhkd/"))
     shutil.copy(os.path.join(os.getcwd(),"bspwm_resize"), os.path.expanduser("~/.config/bspwm/scripts"))
-    os.system("chmod +x ~/.config/bspwm/bspwm_resize")
+    os.system("chmod +x ~/.config/bspwm/scripts/bspwm_resize")
+
+def polybar():
+    #os.system("mkdir -p /usr/local/share/fonts")
+    shutil.copy(os.path.join(os.getcwd(),"recursos/Hack.zip"),os.path.expanduser("/usr/local/share/fonts") )
+    os.system("7z x /usr/local/fonts/Hack.zip")
 
 menu()
