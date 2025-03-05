@@ -63,9 +63,8 @@ def req():
     print("[+] Requetimientos instalados correctamente")
 
 def bspwm():
-    print("[+] Creando directorios.....")
-    directory(directorios)
-    time.sleep(2)
+    os.system("mkdir -p ~/repos ~/.config/bspwm/scripts ~/.config/sxhkd ~/.config/polybar /usr/local/share/fonts")
+
     os.system("cd ~/repos && git clone https://github.com/baskerville/bspwm.git")
     os.system("cd ~/repos/bspwm && make && sudo make install")
     os.system("cd ~/repos && git clone https://github.com/baskerville/sxhkd.git")
