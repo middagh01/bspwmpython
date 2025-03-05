@@ -12,6 +12,13 @@ if __name__ == "__main__":
     else:
         print("Ejecutando como usuario normal")
 ruta = os.getcwd()
+directorios = [
+        os.path.expanduser("~/repos"),
+        os.path.expanduser("~/.config/bspwm/scripts"),
+        os.path.expanduser("~/.config/sxhkd"),
+        os.path.expanduser("~/.config/polybar"),
+        os.path.expanduser("/usr/local/share/fonts"),
+]
 
 
 
@@ -57,7 +64,7 @@ def req():
 
 def bspwm():
     print("[+] Creando directorios.....")
-    directory()
+    directory(directorios)
     time.sleep(2)
     os.system("cd ~/repos && git clone https://github.com/baskerville/bspwm.git")
     os.system("cd ~/repos/bspwm && make && sudo make install")
